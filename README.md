@@ -32,10 +32,8 @@
 В качестве последовательности весов взята нелинейно убывающую последовательность - геометрическая прогрессия: ![w_i = q^i](https://latex.codecogs.com/gif.latex?w_i%20%3D%20q%5Ei), где знаменатель прогрессии ![q ∈ (0, 1)](https://latex.codecogs.com/gif.latex?q%20%5Cin%20%280%2C%201%29%24) является параметром алгоритма. Его можно подбирать по критерию LOO, аналогично числу соседей k.  
 
 Для составления карты классификации параметр k равен 6, а параметр веса q равен 0.5:
-![KWNN](https://github.com/SimfikDuke/Rprojects/blob/master/MetricalAlgorithms/img/LOO_KWNN.png)
+![LOOKWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/LOO(k%2Cq).png)
+![KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KWNN.png)
 
 На следующем графике наглядно продемонстрированно превосходство алгоритма классификации kwNN над алгоритмом kNN:
 ![KNN_KWNN](https://github.com/SimfikDuke/Rprojects/blob/master/MetricalAlgorithms/img/KNN_KWNN.png)
-
-На следующем графике показанно, что для выборки ирисов фишера, алгоритм k-ближайших соседей имеет минимальную оценку LOO=0.0333, а алгоритм k-взвешенных соседей, при k=19 и q=0.2 имеет минимальную оценку LOO=0.0267. Следовательно, качество классификации алгоритма kwNN лучше, чем kNN.
-![LOO_LOO](https://github.com/SimfikDuke/Rprojects/blob/master/MetricalAlgorithms/img/LOO_LOO.png)
