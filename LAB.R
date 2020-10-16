@@ -1,9 +1,6 @@
-
-#определение цвета точек
-colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
-
 #начальный вид исходных данных
 drawMain <- function(){
+  colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
   plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species],asp = 1)
 }
 drawMain()
@@ -77,10 +74,12 @@ LOOKNN <- function(x){
   finalK <- which.min(loo)
   minLOO <- min(loo)
   print(minLOO)
+ # text <- paste("k=",finalK,"\nLOO=",minLOO,sep="")
   plot(loo,type = "l",xlab = "k", ylab="loo")
   points(finalK, minLOO, pch=22, col="black", bg="black")
+ # text(finalK + 15,minLOO+ 0.1,labels=text)
 }
-LOOKNN(iris[3:5])
+#LOOKNN(iris[3:5])
 
 
 
@@ -105,7 +104,6 @@ KWNN <- function(x,z,k,w){
   return(ans)
 }
 
-#KWNN(iris[,3:5],c(3,1))
 
 #отображение KWNN
 drawKWNN <- function(z1,z2){
@@ -115,10 +113,10 @@ drawKWNN <- function(z1,z2){
 
 
 #“очность KWNN
-LOOKWNN <- function(x, k=6){
+LOOKWNN <- function(x, k=16){
   m <- 150
   n <- 2
-  q <- seq(0.01,0.99,0.01)
+  q <- seq(0.05,0.95,0.05)
   len <- length(q)
   loo <- rep(0,len)
   for(i in 1:m){
@@ -147,8 +145,10 @@ LOOKWNN <- function(x, k=6){
   finalLOO = min(loo)
   #print(loo)
   #print(which.min(loo))
+  text <- paste("q = ", q,"\nLOO=",loo)
   plot(q,loo,type = "l",xlab = "q", ylab="LOO")
-  points(finalq, finalLOO, pch=22, col="black", bg="black")
+  points(finalq + 0.001, finalLOO + 0.0004, pch=22, col="black", bg="black")
+  text(finalq + 0.2,finalLOO+0.003,labels=text)
 }
 LOOKWNN(iris[3:5])
 
@@ -161,5 +161,5 @@ DrawMap2 <- function(){
     }
   }
 }
-DrawMap2()
+#DrawMap2()
 
