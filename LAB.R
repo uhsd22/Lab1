@@ -33,11 +33,16 @@ KNN <- function(x,z, k){
 
 #отображение knn
 drawKNN <- function(z1,z2){
-  points(z1, z2, pch = 22, col = colors[KNN(iris[,3:5],c(z1,z2), 6)])
+  points(z1, z2, pch = 22, col = colors[KNN(iris[,3:5],c(z1,z2), 7)])
 }
 
-#drawKNN(3, 1)
-
+test <- function(){
+text <- paste("W=", 1 ," L=",2.5,sep="")
+#drawKNN(2.5, 1)
+drawKWNN(2.5, 1)
+text(2.55,1.05,labels=text)
+}
+test()
 #карта классификации KNN
 DrawMap1 <- function(){
   for (i in seq(0,7,0.1)) {
@@ -162,4 +167,3 @@ DrawMap2 <- function(){
   }
 }
 #DrawMap2()
-
