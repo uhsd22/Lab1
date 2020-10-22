@@ -39,7 +39,7 @@
 ![KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KWNN.png)
 
 Далее на графиках наглядно продемонстрированно превосходство алгоритма классификации kwNN над алгоритмом kNN:
-##KNN
+### KNN
 ![KNN_KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/ExKNN.png)
-##KWNN
+### KWNN
 ![KWNN_KNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/ExKWNN.png)
