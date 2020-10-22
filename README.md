@@ -38,6 +38,8 @@
 Для составления карты классификации параметр k равен 6, а параметр веса q равен 0.05:
 ![KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KWNN.png)
 
-На следующем графике наглядно продемонстрированно превосходство алгоритма классификации kwNN над алгоритмом kNN:
+Далее на графиках наглядно продемонстрированно превосходство алгоритма классификации kwNN над алгоритмом kNN:
+##KNN
 ![KNN_KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/ExKNN.png)
+##KWNN
 ![KWNN_KNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/ExKWNN.png)
