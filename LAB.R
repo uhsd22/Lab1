@@ -118,7 +118,7 @@ drawKWNN <- function(z1,z2){
 
 
 #Точность KWNN
-LOOKWNN <- function(x, k=16){
+LOOKWNN <- function(x, k=6){
   m <- 150
   n <- 2
   q <- seq(0.05,0.95,0.05)
@@ -154,6 +154,7 @@ LOOKWNN <- function(x, k=16){
   plot(q,loo,type = "l",xlab = "q", ylab="LOO")
   points(finalq + 0.001, finalLOO + 0.0004, pch=22, col="black", bg="black")
   text(finalq + 0.2,finalLOO+0.003,labels=text)
+  print(finalq);
 }
 LOOKWNN(iris[3:5])
 
@@ -166,4 +167,4 @@ DrawMap2 <- function(){
     }
   }
 }
-#DrawMap2()
+DrawMap2()
