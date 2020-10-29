@@ -1,49 +1,44 @@
-#начальный вид исходных данных
+#initial view of the source data
 drawMain <- function(){
   colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
   plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species],asp = 1)
 }
 drawMain()
 
-#функция для измерения расстояния
+#distance function
 Distance <- function(u, v) {
   sqrt(sum((u - v)^2))
 }
 
 #реализация KNN 
 KNN <- function(x,z, k){
- # print(z)
   n <- 150 #row
-#  print(n)
   m <- 2 #col
- # print(m)
   distMatrix <- matrix(NA, n, m)
   for (i in n:1){
-    #print(i)
-    #print(x[i, 1:m])
-    #print(z)
-    #print(Distance(x[i,1:m], z))
     distMatrix[i,] <- c(i, Distance(x[i,1:m], z))
-    #print(distMatrix[i,]) #row with dist
   }
   sortflowers <- x[order(distMatrix[,2])[1:k],m+1] #order - sort index
   ans <- names(which.max(table(sortflowers))) # which.max - index of max element
   return(ans)
 }
 
-#отображение knn
+#Draw knn
 drawKNN <- function(z1,z2){
   points(z1, z2, pch = 22, col = colors[KNN(iris[,3:5],c(z1,z2), 7)])
 }
 
+#comparison function
 test <- function(){
 text <- paste("W=", 1 ," L=",2.5,sep="")
 #drawKNN(2.5, 1)
 drawKWNN(2.5, 1)
 text(2.55,1.05,labels=text)
 }
-test()
-#карта классификации KNN
+#test()
+
+
+#MAP KNN
 DrawMap1 <- function(){
   for (i in seq(0,7,0.1)) {
     for (j in seq(0,2.5,0.1)){
@@ -52,7 +47,8 @@ DrawMap1 <- function(){
   }
 }
 #DrawMap1()
-#точность KNN
+
+#LOO KNN
 LOOKNN <- function(x){
   n <- 150 #row
   m <- 2 # col
@@ -88,7 +84,7 @@ LOOKNN <- function(x){
 
 
 
-#реализация KWNN
+# KWNN
 KWNN <- function(x,z,k,w){
   m <- 150
   n <- 2
@@ -97,9 +93,7 @@ KWNN <- function(x,z,k,w){
     distMatrix[i,] <- c(i, Distance(x[i,1:n], z))
   
   ordered <- x[order(distMatrix[,2])[1:k],]
-  #print(ordered)
   sortedFlowers <- names(table(ordered[,n+1]))
-  #print(sortedFlowers)
   worth <- rep(0,length(sortedFlowers))
   
   for(i in 1:k)
@@ -110,14 +104,14 @@ KWNN <- function(x,z,k,w){
 }
 
 
-#отображение KWNN
+#draw KWNN
 drawKWNN <- function(z1,z2){
   points(z1, z2, pch = 22, col = colors[KWNN(iris[,3:5],c(z1,z2),6,0.05)])
 }
 #drawKWNN(2.2, 1.5)
 
 
-#Точность KWNN
+#LOO KWNN
 LOOKWNN <- function(x, k=6){
   m <- 150
   n <- 2
@@ -158,7 +152,7 @@ LOOKWNN <- function(x, k=6){
 }
 LOOKWNN(iris[3:5])
 
-#Карта классификации KWNN
+#MAP KWNN
 
 DrawMap2 <- function(){
   for (i in seq(0,7,0.1)) {
