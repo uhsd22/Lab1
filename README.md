@@ -42,16 +42,6 @@
       <td>h=0.1</td>
       <td>0.04</td>
     </tr>
-    <tr>
-      <td><a href="#Potentials">Потенциальные функции</a></td>
-      <td>h=(1х50, 0.5х100)</td>
-      <td><b>Переменная</b></td>
-    </tr>
-    <tr>
-      <td><a href="#stolp">STOLP</a></td>
-      <td></td>
-      <td><b></b></td>
-    </tr>
   </tbody>
    </table>
 </center>
