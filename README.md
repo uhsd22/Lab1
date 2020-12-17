@@ -73,7 +73,7 @@
 
 По представленному графику можем заметить, что минимальная оценка **LOO = 0.(3)** при **k = 6**.
 Карта классификации выглядит следующим образом:
-![KNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KNN.png)
+![KNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KNNew.png)
 
 ### **2. Метод классификации k-взвешенных соседей("kwNN"):**  
 Альтернативный вариант метода kNN: в каждом классе выбирается k ближайших объектов, и объект относится к тому классу, для
@@ -83,7 +83,7 @@
 ![LOOKWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/KWNNLoo.png)
 
 Для составления карты классификации параметр k равен 6, а параметр веса q равен 0.05:
-![KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KWNN.png)
+![KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KWNNew.png)
 
 Далее на графиках наглядно продемонстрированно превосходство алгоритма классификации KWNN над алгоритмом KNN:
 ### KNN
