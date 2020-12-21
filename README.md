@@ -138,4 +138,28 @@ LOOKNN <- function(xx){
 1. Дана обучающая выборка xx, случайно выбранная точка z, ширина окна h.
 2. Вычисляем расстояние от z до каждого объекта из выбоки xx.
 3. Сортируем расстояния от минимума к максимуму.
-4. Проходим по всех объектам выборки.
+4. Проходим по всех объектам выборки и опредлеяем вес при помощи функции ядра.
+
+
+	![Parsen](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/parzen.jpg),где значение функции K определяется как расстояние от заданного z до всех объектов выборки деленное на ширину окна
+5. Находим взвешенную сумму.
+
+Реализация
+```
+parsen <- function(x, z, h, K){
+  m <- dim(x)[1]
+  n <- dim(x)[2]-1
+  count_classes <- length(names(table(x[,n+1])))
+  classes <- rep(0,count_classes)
+  names(classes) <- names(table(x[,n+1]))
+  for(i in 1:m){
+    y <- x[i,n+1]
+    dist <- eDist(x[i,1:n],z)
+    w <- K(dist/h)
+    classes[y] <- classes[y] + w
+  }
+  if(sum(classes) > 0) class <- names(which.max(classes))
+  else class <- "unknown"
+  return(class)
+}
+```
