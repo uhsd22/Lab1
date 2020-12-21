@@ -144,7 +144,7 @@ LOOKNN <- function(xx){
 	![Parsen](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/parzen.jpg),где значение функции K определяется как расстояние от заданного z до всех объектов выборки деленное на ширину окна
 5. Находим взвешенную сумму.
 
-Реализация
+Реализация алгоритма
 ```
 parsen <- function(xx, z, h, K){
   row <- dim(xx)[1]
