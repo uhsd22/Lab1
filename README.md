@@ -54,7 +54,7 @@
 
 
 ```
- Distance <- function(u, v) {
+ EucDist <- function(u, v) {
   sqrt(sum((u - v)^2))
 }
 ```
@@ -146,15 +146,15 @@ LOOKNN <- function(xx){
 
 Реализация
 ```
-parsen <- function(x, z, h, K){
-  m <- dim(x)[1]
-  n <- dim(x)[2]-1
-  count_classes <- length(names(table(x[,n+1])))
+parsen <- function(xx, z, h, K){
+  row <- dim(xx)[1]
+  col <- dim(xx)[2]-1
+  count_classes <- length(names(table(xx[,col+1])))
   classes <- rep(0,count_classes)
-  names(classes) <- names(table(x[,n+1]))
-  for(i in 1:m){
-    y <- x[i,n+1]
-    dist <- eDist(x[i,1:n],z)
+  names(classes) <- names(table(xx[,col+1]))
+  for(i in 1:row){
+    y <- xx[i,col+1]
+    dist <- EucDist(xx[i,1:col],z)
     w <- K(dist/h)
     classes[y] <- classes[y] + w
   }
