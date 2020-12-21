@@ -66,11 +66,43 @@
 - Когда появляются новые неразмеченные данные, kNN проходит по 2 базовым шагам:
 	+ Сначала он ищет k ближайших размеченных точек данных – другими словами, k ближайших соседей.
 	+ Затем, используя классы соседей, kNN решает, как лучше классифицировать новые данные.
-
-
-Оптимальное значение параметра k определяют по критерию скользящего контроля с исключением объектов по одному (leave-one-out, LOO). Для каждого объекта проверяется, правильно ли он классифицируется по своим k ближайшим соседям.   
+```
+KNN <- function(xx,z,k = 6){
+  rows0 <- dim(xx)[1] #ряды
+  col0  <- dim(xx)[2] - 1 #стобцы
+  distances <- matrix(NA, rows0, col0) #матрица расстояний
+  for(i in rows0:1){
+    distances[i,] <- c(i, EucDist(xx[i,1:col0], z)) #заполнение матрицы
+  }
+  classes <- xx[order(distances[,2])[1:k], col0 + 1] #сортировка элементов по частоте появления цветов
+  class <- names(which.max(table(classes))) #цвет наиболее близкого класса
+  return(class)
+}
+```
+Оптимальное значение параметра k определяют по критерию скользящего контроля с исключением объектов по одному (leave-one-out, LOO). Для каждого объекта проверяется, правильно ли он классифицируется по своим k ближайшим соседям.  
+Реализация LOO для KNN:
+```
+LOOKNN <- function(xx){
+  row1 <- dim(xx)[1]
+  col1 <- dim(xx)[2] - 1
+  score_arr <- rep(0, row1)
+  for(i in 1:row1){
+    tmp_xx <- xx[-i,]
+    tmp_xx_cnt <- dim(tmp_xx)[1]
+    dist_matrix <- matrix(NA, tmp_xx_cnt, col1) #задаем матрицу расстояний
+    for(j in tmp_xx_cnt:1){
+      dist_matrix[j,] <- c(j, EucDist(tmp_xx[j,1:col1], xx[i, 1:col1]))#заполняем матрциу расстояний
+    }
+    ordered_dist_matrix <- order(dist_matrix[,2]) #сортируем матрицу расстояний
+    for (k in 1:row1){  #даем оценку каждому k
+      class <- names(which.max(table(xx[ordered_dist_matrix[1:k],col1 + 1])))
+      if (class != xx[i, col1 + 1]){
+        score_arr[ k ] <- score_arr[ k ] + 1/row1
+      }
+    }
+  }
+  ```
 ![LOO](https://github.com/uhsd22/Lab1/blob/master/LabIMG/LOOKNN.png)
-
 По представленному графику можем заметить, что минимальная оценка **LOO = 0.0(3)** при **k = 6**.
 Карта классификации выглядит следующим образом:
 ![KNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KNNew.png)
