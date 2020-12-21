@@ -60,7 +60,7 @@
 ```
 ## Алгоритм классификации "1NN"(добавлен в качестве дополнения):
 ![ONN](https://github.com/uhsd22/ML_LABS/blob/master/SBC/1NN/ONN.png)
-### **1. Метод классификации k-ближайших соседей("kNN"):**
+### <a name="KNN"></a> **1. Метод классификации k-ближайших соседей("kNN"):**
 
 **KNN** сохраняет размеченные тренировочные данные.
 - Когда появляются новые неразмеченные данные, kNN проходит по 2 базовым шагам:
@@ -107,7 +107,7 @@ LOOKNN <- function(xx){
 Карта классификации выглядит следующим образом:
 ![KNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KNNew.png)
 
-### **2. Метод классификации k-взвешенных соседей("kwNN"):**  
+### <a name="KWNN"></a>**2. Метод классификации k-взвешенных соседей("kwNN"):**  
 Альтернативный вариант метода kNN: в каждом классе выбирается k ближайших объектов, и объект относится к тому классу, для
 которого среднее расстояние до k ближайших соседей минимально.
 
@@ -115,7 +115,7 @@ LOOKNN <- function(xx){
 ![LOOKWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/KWNNLoo.png)
 
 Для составления карты классификации параметр k равен 6, а параметр веса q равен 0.5:
-![KWNN](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KWNNew.png)
+![KWNN1](https://github.com/uhsd22/Lab1/blob/master/LabIMG/map_KWNNew.png)
 
 Далее на графиках наглядно продемонстрированно превосходство алгоритма классификации KWNN над алгоритмом KNN:
 ### KNN
@@ -168,7 +168,7 @@ parsen <- function(xx, z, h, K){
 **Ядра:**
 
 
-**1. Прямоугольное ядро**
+**1. <a name="ParzenR"></a>Прямоугольное ядро**
 ```
 kR <- function(z){
 return (0.5 * (abs(z)<=1))
@@ -178,7 +178,7 @@ return (0.5 * (abs(z)<=1))
 ![MAP_RectKer](https://github.com/uhsd22/ML_LABS/blob/master/SBC/PW/RectKer.png)
 
 
-**2. Треугольное ядро**
+**2. <a name="ParzenT"></a>Треугольное ядро**
 ```
 kT <- function(z){
 return ((1 - abs(z))*(abs(z)<=1))
@@ -189,7 +189,7 @@ return ((1 - abs(z))*(abs(z)<=1))
 ![MAP_TrKer](https://github.com/uhsd22/ML_LABS/blob/master/SBC/PW/TrKer.png)
 
 
-**3. Квартическое ядро**
+**3. <a name="ParzenQ"></a>Квартическое ядро**
 ```
 kQ <- function(z){
 return ((15/16)*(1 - z^2)^2 * (abs(z)<=1))
@@ -199,7 +199,7 @@ return ((15/16)*(1 - z^2)^2 * (abs(z)<=1))
 **Оптимальный параметр ширины окна h=0.35, оценка LOO=0.04. Карта классификации выглядит следующим образом:**
 ![MAP_QuadKer](https://github.com/uhsd22/ML_LABS/blob/master/SBC/PW/QuadKer.png)
 
-**4. Ядро Епанечникова**
+**4. <a name="ParzenE"></a>Ядро Епанечникова**
 ```
 kE <- function(z){
 return ((3/4)*(1-z^2) * (abs(z)<=1))
@@ -210,7 +210,7 @@ return ((3/4)*(1-z^2) * (abs(z)<=1))
 ![MAP_EpKer](https://github.com/uhsd22/ML_LABS/blob/master/SBC/PW/EpKer.png)
 
 
-**5. Ядро Гаусса**
+**5. <a name="ParzenG"></a>Ядро Гаусса**
 ```
 kG <- function(z) {
   return ((2*pi)^(-0.5)*exp(-0.5*(z^2)))
