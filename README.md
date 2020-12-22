@@ -9,7 +9,7 @@
     </tr>
     <tr>
       <td><a href="#KWNN1">KWNN</a></td>
-      <td>k=20, q=0.05</td>
+      <td>k=20, q=0.5</td>
       <td>0.02</td>
     </tr>
     <tr>
