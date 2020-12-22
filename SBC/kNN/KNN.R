@@ -1,5 +1,5 @@
 
-colors <- c("setosa" = "darkorchid3", "versicolor" = "firebrick1", "virginica"= "aquamarine3","unknown"="white")
+colors <- c("setosa" = "darkorchid3", "versicolor" = "firebrick1", "virginica"= "aquamarine3","unknown"="yellow")
 plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species])
 
 #distance
@@ -57,7 +57,7 @@ LOOKNN <- function(xx){
   FinalK <- which.min(score_arr)
   FinalLOO <- round(min(score_arr),3)
   text <- paste("k=",FinalK,"\nLOO=",FinalLOO)
-  plot(score_arr,type = "l",main = "LOO(k) àëãîðèòìà KNN",xlab = "k", ylab="îöåíêà")
+  plot(score_arr,type = "l",main = "LOO(k) Ã Ã«Ã£Ã®Ã°Ã¨Ã²Ã¬Ã  KNN",xlab = "k", ylab="Ã®Ã¶Ã¥Ã­ÃªÃ ")
   points(FinalK, FinalLOO, pch=4, col="red")
   legend("topleft", legend = text)
 }
