@@ -286,9 +286,9 @@ kG <- function(z) {
    Нормальный дискриминантный анализ — это специальный случай байесовской
 классификации, когда предполагается, что плотности всех классов являются многомерными нормальными. Этот случай интересен и удобен тем, что задача оценивания параметров распределения по выборке решается аналитически.
 
-Пусть [](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line1.png), то есть объекты описываются n числовыми признаками.
+Пусть [q](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line1.png), то есть объекты описываются n числовыми признаками.
 
-Вероятностное распределение с плотностью ![machinelearning](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line2.png)
+Вероятностное распределение с плотностью ![qq](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line2.png)
 
 называется n-мерным нормальным (гауссовским) распределением с математическим
-ожиданием (центром) [](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line3.png) и ковариационной матрицей [](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line4.png). Предполагается,что матрица Σ симметричная, невырожденная, положительно определённая
+ожиданием (центром) ![qqq](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line3.png) и ковариационной матрицей ![qqqq](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line4.png). Предполагается,что матрица Σ симметричная, невырожденная, положительно определённая
