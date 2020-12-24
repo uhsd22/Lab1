@@ -292,7 +292,7 @@ kG <- function(z) {
 
 называется n-мерным нормальным (гауссовским) распределением с математическим
 ожиданием (центром) ![qqq](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line3.png) и ковариационной матрицей ![qqqq](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line4.png). Предполагается,что матрица Σ симметричная, невырожденная, положительно определённая.
-[Здесь ссылка на вывод формулы из конспекта]()
+[Здесь ссылка на вывод формулы из конспекта](https://raw.githubusercontent.com/uhsd22/ML_LABS/master/LabIMG/form_lines.jpg)
 
 ```
 countt <- function( x) { #плотность нормального многомерного распределения
