@@ -296,6 +296,10 @@ kG <- function(z) {
 
 [Здесь ссылка на вывод формулы из конспекта](https://raw.githubusercontent.com/uhsd22/ML_LABS/master/LabIMG/form_lines.jpg)
 
+
+**Код:**
+
+
 ```
 countt <- function( x) { #плотность нормального многомерного распределения
   
@@ -364,9 +368,16 @@ for (i in x) {
  contour(x,y,z,add = T)
  z <- 0
 ```
-<table><td>
+
+   - Если признаки имеют одинаковые дисперсии , то эллипсоиды являются сферами.
+<table>
+	<td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/circle_ex.png" width="500" heigth="200">
     </td>
+</table>
+
+   - Если признаки некоррелированы,  то линии уровня плотности распределения имеют форму эллипсоидов с осями, параллельными осям координат.
+   <table>
 	<tr>
     <td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/norm_ellipse(1_5).png" width="500" heigth="200">
@@ -375,6 +386,10 @@ for (i in x) {
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/norm_ellipse2(5_1).png" width="500" heigth="200">
     </td>
 	</tr>
+	<table>
+		
+   - Если признаки коррелированы, то матрица Σ не диагональна и линии уровня имеют форму эллипсоидов, оси которых повернуты (направлены вдоль собственных векторов матрицы Σ) относительно исходной системы координат.
+   <table>
   <tr>
     <td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
