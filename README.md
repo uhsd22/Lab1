@@ -292,6 +292,8 @@ kG <- function(z) {
 
 называется n-мерным нормальным (гауссовским) распределением с математическим
 ожиданием (центром) ![qqq](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line3.png) и ковариационной матрицей ![qqqq](https://github.com/uhsd22/ML_LABS/blob/master/LabIMG/line4.png). Предполагается,что матрица Σ симметричная, невырожденная, положительно определённая.
+
+
 [Здесь ссылка на вывод формулы из конспекта](https://raw.githubusercontent.com/uhsd22/ML_LABS/master/LabIMG/form_lines.jpg)
 
 ```
@@ -362,7 +364,17 @@ for (i in x) {
  contour(x,y,z,add = T)
  z <- 0
 ```
-<table>
+<table><td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/circle_ex.png" width="500" heigth="200">
+    </td>
+	<tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/norm_ellipse(1_5).png" width="500" heigth="200">
+    </td>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/norm_ellipse2(5_1).png" width="500" heigth="200">
+    </td>
+	</tr>
   <tr>
     <td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
