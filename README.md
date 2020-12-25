@@ -405,4 +405,4 @@ for (i in x) {
   </tr>
 </table>
 
-   # <a name="metr"></a> <center><b>Линейные алгоритмы класификации</b></center>
+   # <a name="line"></a> <center><b>Линейные алгоритмы класификации</b></center>
