@@ -406,3 +406,9 @@ for (i in x) {
 </table>
 
    # <a name="line"></a> <center><b>Линейные алгоритмы класификации</b></center>
+   
+   
+   ## **1. Метод опорных векторов**
+   
+   [тут ссылка на теорию](https://neerc.ifmo.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BE%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D1%85_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2_(SVM))
+   
