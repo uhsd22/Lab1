@@ -430,6 +430,23 @@ for (i in x) {
 
 ![](https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd.png)
 
+   <table>
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c1.png" width="500" heigth="200">
+	</tr>
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c10.png" width="500" heigth="200">
+	</tr>
+	
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c100.png" width="500" heigth="200">
+	</tr>
+	
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/ROC_lin_razd.png" width="500" heigth="200">
+	</tr>
+</table>
+
 
 ## Линейно неразделимая выборка
 
@@ -471,22 +488,8 @@ abline((b + 1)/w[2], -w[1]/w[2], lty = 2)
 abline((b - 1)/w[2], -w[1]/w[2], lty = 2)
 
 ```
-   <table>
-  <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c1.png" width="500" heigth="200">
-	</tr>
-  <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c10.png" width="500" heigth="200">
-	</tr>
-	
-  <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c100.png" width="500" heigth="200">
-	</tr>
-	
-  <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/ROC_lin_razd.png" width="500" heigth="200">
-	</tr>
-</table>
+
+
 ##  ROC-кривая
 **Кривая ошибок** или **ROC-кривая** – графичекая характеристика качества классификатора, зависимость доли верных положительных классификаций(**TRP**) от доли ложных положительных(**TRP**) классификаций при варьировании порога решающего правила. ROC-кривая наглядно представляет внешний вид качества классификации при изменении значений свободного параметра.
 
