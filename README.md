@@ -473,18 +473,18 @@ abline((b - 1)/w[2], -w[1]/w[2], lty = 2)
 ```
    <table>
   <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c1.png" width="500" heigth="200">
 	</tr>
   <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
-	</tr>
-	
-  <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c10.png" width="500" heigth="200">
 	</tr>
 	
   <tr>
-      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_razd_c100.png" width="500" heigth="200">
+	</tr>
+	
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/ROC_lin_razd.png" width="500" heigth="200">
 	</tr>
 </table>
 ##  ROC-кривая
