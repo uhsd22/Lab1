@@ -422,6 +422,29 @@ for (i in x) {
 
 ## Линейно разделимая выборка
 
+
+
+```
+x <- iris[1:100, 3:4]
+y <- c(rep(1,50), rep(-1, 50))
+d <- data.frame(x = x,y = y)
+names(d) <- c("x1", "x2", "y")
+svp <- ksvm(y ~ x1 + x2, data = d, type = "C-svc", C = 10, kernel = "vanilladot", scaled = c())
+ymat <- ymatrix(svp)
+
+points(x[-SVindex(svp),1], x[-SVindex(svp),2], pch = 1, col = ifelse(ymat[-SVindex(svp)] < 0, "aquamarine4", "red"))
+points(x[SVindex(svp),1], x[SVindex(svp),2], pch = 15, col = ifelse(ymat[SVindex(svp)] < 0, "aquamarine4", "red"))
+
+w <- colSums(coef(svp)[[1]] * x[SVindex(svp),])
+b <- b(svp)
+
+abline(b/w[2], -w[1]/w[2])
+abline((b + 1)/w[2], -w[1]/w[2], lty = 2)
+abline((b - 1)/w[2], -w[1]/w[2], lty = 2)
+
+```
+
+
 На практике линейно разделимые классы встречаются редко, но если все же они встретились, тогда мы получаем задачу квадратчного программирования, в которой мы находим максимальную ширину полосы, разделяющей классы.
 
 
@@ -450,6 +473,11 @@ for (i in x) {
 
 ## Линейно неразделимая выборка
 
+```
+x <- iris[51:50, 3:4]
+```
+
+
 В случае линейно неразделимой выборки мы ослабляем ограничения, тем самым позволяя алгоритму допускать ошибки, число которых мы минимизируем. В следствии этих действий задача квадратичного программирования принимает следующий вид:
 
 ![](https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_nerazd1.png)
@@ -467,27 +495,32 @@ for (i in x) {
 
 ![](https://github.com/uhsd22/ML_LABS/blob/master/SVM/nerazd4.gif)
 
-
-
-```
-x <- iris[1:100, 3:4]
-y <- c(rep(1,50), rep(-1, 50))
-d <- data.frame(x = x,y = y)
-names(d) <- c("x1", "x2", "y")
-svp <- ksvm(y ~ x1 + x2, data = d, type = "C-svc", C = 10, kernel = "vanilladot", scaled = c())
-ymat <- ymatrix(svp)
-
-points(x[-SVindex(svp),1], x[-SVindex(svp),2], pch = 1, col = ifelse(ymat[-SVindex(svp)] < 0, "aquamarine4", "red"))
-points(x[SVindex(svp),1], x[SVindex(svp),2], pch = 15, col = ifelse(ymat[SVindex(svp)] < 0, "aquamarine4", "red"))
-
-w <- colSums(coef(svp)[[1]] * x[SVindex(svp),])
-b <- b(svp)
-
-abline(b/w[2], -w[1]/w[2])
-abline((b + 1)/w[2], -w[1]/w[2], lty = 2)
-abline((b - 1)/w[2], -w[1]/w[2], lty = 2)
-
-```
+   <table>
+	<tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/c1nerazd1.png" width="500" heigth="200">
+    </td>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/c1nerazd2.png" width="500" heigth="200">
+    </td>
+	</tr>
+	<tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/c10nerazd1.png" width="500" heigth="200">
+    </td>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/c10nerazd2.png" width="500" heigth="200">
+    </td>
+	</tr>
+	<tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/c100nerazd1.png" width="500" heigth="200">
+    </td>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/SVM/c100nerazd2.png" width="500" heigth="200">
+    </td>
+	</tr>
+	<table>
 
 
 ##  ROC-кривая
