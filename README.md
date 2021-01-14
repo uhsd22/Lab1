@@ -471,7 +471,22 @@ abline((b + 1)/w[2], -w[1]/w[2], lty = 2)
 abline((b - 1)/w[2], -w[1]/w[2], lty = 2)
 
 ```
-
+   <table>
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
+	</tr>
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
+	</tr>
+	
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
+	</tr>
+	
+  <tr>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Bayes/lev_lines/deform_ellipse(9_3).png" width="500" heigth="200">
+	</tr>
+</table>
 ##  ROC-кривая
 **Кривая ошибок** или **ROC-кривая** – графичекая характеристика качества классификатора, зависимость доли верных положительных классификаций(**TRP**) от доли ложных положительных(**TRP**) классификаций при варьировании порога решающего правила. ROC-кривая наглядно представляет внешний вид качества классификации при изменении значений свободного параметра.
 
