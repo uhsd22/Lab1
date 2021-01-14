@@ -444,4 +444,4 @@ for (i in x) {
 ![](https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_nerazd2.png)
 
 сведем алгоритм классификации к следующему виду
-![](https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_nerazd2.png)
+![](https://github.com/uhsd22/ML_LABS/blob/master/SVM/lin_nerazd3.png)
