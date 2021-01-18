@@ -49,8 +49,7 @@
     </tr>
 	<tr>
       <td><a href="#PF">PF</a></td>
-      <td>h=0.4</td>
-      <td>0.04</td>
+      <td>h=1</td>
     </tr>
 	<tr>
       <td><a href="#STOLP">STOLP</a></td>
@@ -286,30 +285,46 @@ kG <- function(z) {
     <td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_Epan2.png" width="500" heigth="200">
     </td>
-    <td></td>
+    <td>Карта классификации для ядра Епанечникова</td>
 	</tr>
     <tr>
     <td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_Quad.png" width="500" heigth="200">
     </td>
-    <td></td>
+    <td>Карта классификации для Квартического ядра</td>
 	</tr>
     <tr>
     <td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_rect2.png" width="500" heigth="200">
     </td>
-    <td></td>
+    <td>Карта классификации для Прямоугольного ядра ядра</td>
 	</tr>
     <tr>
     <td>
       <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_tr.png" width="500" heigth="200">
     </td>
-    <td></td>
+    <td>Карта классификации для Треугольного ядра</td>
 	</tr>
+<table>
+  
+ ***Плюсы и минусы PF:***
 
-	<table>
-   
-       ## **<a name="STOLP"></a>7. STOLP:** 
+- **Плюсы:**
+
+	+ Очень эффективен, когда обучающие объекты поступают потоком, и хранить их в памяти нет возможности или необходимости.
+
+
+- **Минусы:**
+
+	+ Медленно сходится;
+	+ результат обучения зависит от порядка предъявления объектов;
+	+ Задача минимизации числа потенциалов (ненулевых γi) вообще не ставится.
+	
+	
+**Вывод:** в настоящее время нет проблемы с хранением выборки и алгоритм представляет скорее исторический интерес.
+	
+	
+   ## **<a name="STOLP"></a>7. STOLP:** 
 
 # <a name="bayes"></a> <center><b>Байесовские классификаторы</b></center>
 Байесовский подход является классическим в теории распознавания образов
