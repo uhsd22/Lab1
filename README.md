@@ -1,12 +1,19 @@
 ## Оглавление
 1. <a href="#metr">Метрические алгоритмы классификации</a><br>
 	1.1 <td><a href="#KNN1">KNN</a></td>
+	
 	1.2 <td><a href="#KWNN1">KWNN</a></td>
+	
 	1.3 <td><a href="#ParzenR">Parzen, Rectangle kerel</a></td>
+	
 	1.4 <td><a href="#ParzenT">Parzen, Triangle kerel</a></td>
+	
 	1.5 <td><a href="#ParzenQ">Parzen, Quartic kerel</a></td>
+	
 	1.6 <td><a href="#ParzenE">Parzen, Epanechnikov kerel</a></td>
+	
 	1.7 <td><a href="#ParzenG">Parzen, Gauss kerel</a></td>
+	
 	1.8 <td><a href="#PF">PF</a></td>
 2. <a href="#bayes">Байесовские алгоритмы классификации</a><br>
 	2.1 <td><a href="#Lin">Линии уровня нормального распределения</a></td>
