@@ -49,7 +49,8 @@
     </tr>
 	<tr>
       <td><a href="#PF">PF</a></td>
-      <td>in progress</td>
+      <td>h=0.4</td>
+      <td>0.04</td>
     </tr>
 	<tr>
       <td><a href="#STOLP">STOLP</a></td>
