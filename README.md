@@ -297,6 +297,88 @@ kG <- function(z) {
    - После чего каждому объекту выборки присваивается *вес* по формуле ![](https://github.com/uhsd22/ML_LABS/blob/master/SBC/PF/pf.png), K(z) - функция ядра.
    - Суммируем веса объектов одинаковых классов. Класс с наибольшей суммой присваивается точке.
 
+
+```
+PF <- function(set, point, h, potentials){
+  
+  row <- dim(set)[1]
+  w <- matrix(0, 3, 1)
+  names(w) = c("setosa", "versicolor", "virginica")
+  
+  for (i in 1:row) {
+    
+    if (distance_of_Euclid(set[i, 1:2], point) <= h) {
+      
+      tmp <- K(set[i, 1:2], point, h)
+      
+      w[set[i, 3]] <- w[set[i, 3]] + potentials[i] * tmp
+      
+    }
+    
+  }
+  
+  if (max(w) == 0) {
+    
+    return("NA")
+    
+  }
+  else {
+    
+    return(names(which.max(w)))
+    
+  }
+  
+}
+
+
+
+find_potentials <- function(set, h, eps) {
+  
+  row <- dim(set)[1]
+  err <- row
+  potentials <- matrix(0, row, 1)
+  
+  while (err > eps) {
+    
+    err <- 0
+    j <- 1
+    
+    while (TRUE) {
+      
+      class <- PF(set, set[j, 1:2], h, potentials)
+      
+      if (set[j, 3] != class) {
+        
+        
+        potentials[j] <- potentials[j] + 1
+        break
+        
+      }
+      
+      j <- j %% row + 1
+      
+    }
+    
+    for (i in 1:row) {
+      
+      class <- PF(set[-i, ], set[i, 1:2], h, potentials)
+      
+      if (set[i, 3] != class) {
+        
+        err <- err + 1
+        
+      }
+      
+    }
+    
+    print(err)
+    
+  }
+  
+  return(potentials)
+  
+}
+```
  <table>
 	<tr>
     <td>
