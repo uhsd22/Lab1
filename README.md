@@ -54,7 +54,8 @@
     </tr>
 	<tr>
       <td><a href="#STOLP">STOLP</a></td>
-      <td>in progress</td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
    </table>
@@ -279,6 +280,35 @@ kG <- function(z) {
    - Затем для обучающих объектов вычисляем *силу потенциала* **gamma**. 
    - После чего каждому объекту выборки присваивается *вес* по формуле ![](https://github.com/uhsd22/ML_LABS/blob/master/SBC/PF/pf.png), K(z) - функция ядра.
    - Суммируем веса объектов одинаковых классов. Класс с наибольшей суммой присваивается точке.
+
+ <table>
+	<tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_Epan2.png" width="500" heigth="200">
+    </td>
+    <td></td>
+	</tr>
+    <tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_Quad.png" width="500" heigth="200">
+    </td>
+    <td></td>
+	</tr>
+    <tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_rect2.png" width="500" heigth="200">
+    </td>
+    <td></td>
+	</tr>
+    <tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/PF/PF_tr.png" width="500" heigth="200">
+    </td>
+    <td></td>
+	</tr>
+
+	<table>
+   
        ## **<a name="STOLP"></a>7. STOLP:** 
 
 # <a name="bayes"></a> <center><b>Байесовские классификаторы</b></center>
