@@ -1,8 +1,17 @@
 ## Оглавление
 1. <a href="#metr">Метрические алгоритмы классификации</a><br>
+	1.1 <td><a href="#KNN1">KNN</a></td>
+	1.2 <td><a href="#KWNN1">KWNN</a></td>
+	1.3 <td><a href="#ParzenR">Parzen, Rectangle kerel</a></td>
+	1.4 <td><a href="#ParzenT">Parzen, Triangle kerel</a></td>
+	1.5 <td><a href="#ParzenQ">Parzen, Quartic kerel</a></td>
+	1.6 <td><a href="#ParzenE">Parzen, Epanechnikov kerel</a></td>
+	1.7 <td><a href="#ParzenG">Parzen, Gauss kerel</a></td>
+	1.8 <td><a href="#PF">PF</a></td>
 2. <a href="#bayes">Байесовские алгоритмы классификации</a><br>
+	2.1 <td><a href="#Lin">Линии уровня нормального распределения</a></td>
 3. <a href="#line">Линейные алгоритмы классификации</a><br>
-
+	3.1 <td><a href="#SVM">Метод опорных векторов</a></td>
 # <a name="metr"></a> <center><b>Метрические алгоритмы</b></center>
 <center>
 <table>
@@ -333,7 +342,8 @@ kG <- function(z) {
 распределения классов известны, то алгоритм классификации, имеющий минимальную вероятность ошибок, можно выписать в явном виде.
 
 **Ссылка на теорию**:[machinelearning](http://www.machinelearning.ru/wiki/images/6/63/voron-ml-bayes1.pdf)
-   ## **1. Линии уровня нормального распределения:**
+
+   ## **<a name="Lin"></a> 1. Линии уровня нормального распределения:**
    
    Нормальный дискриминантный анализ — это специальный случай байесовской
 классификации, когда предполагается, что плотности всех классов являются многомерными нормальными. Этот случай интересен и удобен тем, что задача оценивания параметров распределения по выборке решается аналитически.
@@ -455,7 +465,7 @@ for (i in x) {
    # <a name="line"></a> <center><b>Линейные алгоритмы класификации</b></center>
    
    
-   ## **1. Метод опорных векторов**
+   ## **<a name="SVM"></a>1. Метод опорных векторов**
    
    [тут ссылка на теорию](https://neerc.ifmo.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BE%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D1%85_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2_(SVM))
    
