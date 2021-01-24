@@ -18,7 +18,7 @@
 2. <a href="#bayes">Байесовские алгоритмы классификации</a><br>
 	2.1 <td><a href="#Lin">Линии уровня нормального распределения</a></td>
 	
-	2.1 <td><a href="#Naive">Наивный нормальный байесовский классификатор</a></td>
+	2.2 <td><a href="#Naive">Наивный нормальный байесовский классификатор</a></td>
 	
 	
 3. <a href="#line">Линейные алгоритмы классификации</a><br>
@@ -637,7 +637,34 @@ for (i in 1:m) {
 lambda <- c(1, 1, 1)
 ```
 
-
+ <table>
+	<tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Naive/L111.png" width="500" heigth="200">
+    </td>
+    <td>λ(1,1,1)</td>
+	</tr>
+    <tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Naive/L1011.png" width="500" heigth="200">
+    </td>
+    <td>λ(10,1,1)</td>
+	</tr>
+    <tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Naive/L11001.png" width="500" heigth="200">
+    </td>
+    <td>λ(1,100,1)</td>
+	</tr>
+    <tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/Naive/L11100.png" width="500" heigth="200">
+    </td>
+    <td>λ(1,1,100)</td>
+	</tr>
+<table>
+	
+	
    # <a name="line"></a> <center><b>Линейные алгоритмы класификации</b></center>
    
    
