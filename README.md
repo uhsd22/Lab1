@@ -22,6 +22,9 @@
 	
 	2.3 <td><a href="#Plug">Подстановочный алгоритм</a></td>
 	
+	2.4 <td><a href="#LDF">Линейный дискриминант Фишера</a></td>
+	
+	
 3. <a href="#line">Линейные алгоритмы классификации</a><br>
 	3.1 <td><a href="#SVM">Метод опорных векторов</a></td>
 # <a name="metr"></a> <center><b>Метрические алгоритмы</b></center>
@@ -730,7 +733,86 @@ plugin <- function(Py, lambda, n, m, mu, sigma, point) {
   + Гипербола
   
   ![](https://github.com/uhsd22/ML_LABS/blob/master/plug/gip.png)
+  
+  ## **<a name="LDF"></a>Линейный дискриминант Фишера**
 
+  В алгоритме линейного дискриминаната Фишера предполагается, что ковариационные матрицы классов равны, откуда следует, что оптимальный байесовский классификитор принимает вид максимизации некоторой линейной функции:
+  
+  
+  ![](https://github.com/uhsd22/ML_LABS/tree/master/LDF)
+  
+  В этом случае линейное решающее правило близко к оптимальному байесовскому, но существенно более устойчиво, чем квадратичное, и часто обладает лучшей обобщающей способностью.
+  
+  Код:
+  
+```
+  LDF <- function(Py, lambda, n, m, mu, sigma, point) {
+  
+  point <- as.numeric(point)
+  p <- rep(0, m)
+  
+  for (i in 1:m) {
+    
+    p[i] <- Py[i] * lambda[i]
+    p[i] <- p[i] *  exp(-(1/2) * t(point - mu[i, ]) %*% solve(sigma) %*% (point - mu[i, ])) / sqrt((2 * pi)^n * det(sigma))
+    
+  }
+  
+  return(classes[which.max(p)])
+}
+# матожидание и дисперсия
+mu <- matrix(0, m, n)
+sigma <- matrix(0, n, n)
+
+# вычисление матожидания 
+for (i in 1:m) {
+  for (j in 1:n) {
+    mu[i, j] <- mean(set[set[, n + 1] == classes[i], ][ , j])
+  }
+}
+
+temp <- rep(0, n)
+
+# вычисление дисперсии
+subset <- set[set[, n + 1] == classes[1], ][ , ]
+l <- dim(subset)[1]
+
+for (j in 1:l){
+
+  for (i in 1:n) {
+    temp[i] <- subset[j, i] - mu[1, i] 
+  }
+  
+  S <- temp %*% t(temp)
+  
+  for (i1 in 1:n) {
+    for (i2 in 1:n) {
+      sigma[i1, i2] <- sigma[i1, i2] + S[i1, i2]
+    }
+  }
+  
+}
+
+for (i1 in 1:n) {
+  for (i2 in 1:n) {
+    sigma[i1, i2] <- sigma[i1, i2] / (row - l)
+  }
+}
+```
+
+Карта классификации ирисов Фишера алгоритмом линейного дискриминанта Фишера:
+
+
+ <table>
+	<tr>
+    <td>
+      <img src="https://github.com/uhsd22/ML_LABS/blob/master/LDF/bez_lin.png" width="500" heigth="200">
+    </td>
+    <td><img src="https://github.com/uhsd22/ML_LABS/blob/master/LDF/lin.png" width="500" heigth="200"></td>
+	</tr>
+<table>
+	
+	
    # <a name="line"></a> <center><b>Линейные алгоритмы класификации</b></center>
    
    
