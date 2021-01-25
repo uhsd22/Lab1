@@ -26,7 +26,13 @@
 	
 	
 3. <a href="#line">Линейные алгоритмы классификации</a><br>
-	3.1 <td><a href="#SVM">Метод опорных векторов</a></td>
+	3.1 <td><a href="#ad">ADALINE. Правило Хэбба</a></td>
+	
+	3.2 <td><a href="#hebb">Правило Хэбба</a></td>
+	
+	3.3 <td><a href="#SVM">Метод опорных векторов</a></td>
+	
+	
 # <a name="metr"></a> <center><b>Метрические алгоритмы</b></center>
 <center>
 <table>
@@ -815,8 +821,95 @@ for (i1 in 1:n) {
 	
    # <a name="line"></a> <center><b>Линейные алгоритмы класификации</b></center>
    
+   ## **<a name="ad"></a>1. ADALINE**
    
-   ## **<a name="SVM"></a>1. Метод опорных векторов**
+  Адаптивный линейный элемент(адаптивный линейный нейрон или ADALINE) - частный случай линейного классификатора или искусственной нейронной сети с одним слоем. Схема работы ADALINE несколько напоминает работу биологического нейрона. На вход подаётся вектор импульсов, состоящий из числовых признаков. Внутри нейрона импульсы складываются с некоторыми весами и, если суммарный импульс превысит порог активации, то нейрон возбуждается и выдаёт некоторое значение. Обучение ADALINE заключается в подборе "наилучших" значений вектора весов. 
+  
+  Правило обновления весов получим при помощи дифференцирования функции потерь.
+  
+  ![](https://github.com/uhsd22/ML_LABS/blob/master/ADALINE/Loss_ADALINE.png)
+  
+  ![](https://github.com/uhsd22/ML_LABS/blob/master/ADALINE/Derivative_ADALINE.png)
+  
+  ![](https://github.com/uhsd22/ML_LABS/blob/master/ADALINE/w_ADALINE.png)
+  
+  ![](https://github.com/uhsd22/ML_LABS/blob/master/ADALINE/rule.png)
+  
+  Код:
+  ```
+  lossFunctionAdaline <- function(x)
+{
+  return((x - 1)^2)
+}
+
+normalize <- function(xl)
+{
+  n <- dim(xl)[2] - 1
+  for (i in 1:n) {
+    xl[, i] <- (xl[, i] - mean(xl[, i])) / sd(xl[, i])
+  }
+  return(xl)
+}
+
+addcol <- function(xl)
+{
+  l <- dim(xl)[1]
+  n <- dim(xl)[2] - 1
+  xl <- cbind(xl[, 1:n], seq(from = -1, to = -1, length.out = l), xl[, n + 1])
+}
+
+sgAdaline <- function(xl, eta = 1, lambda = 1 / 6)
+{
+  l <- dim(xl)[1]
+  n <- dim(xl)[2] - 1
+  w <- c(1 / 2, 1 / 2, 1 / 2)
+  iterCount <- 0
+  Q <- 0
+  for (i in 1:l) {
+    wx <- sum(w * xl[i, 1:n])
+    margin <- wx * xl[i, n + 1]
+    Q <- Q + lossFunctionAdaline(margin)
+  }
+  repeat
+  {
+    margins <- array(dim = l)
+    for (i in 1:l)
+    {
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      margins[i] <- crossprod(w, xi) * yi
+    }
+    errorIndexes <- which(margins <= 0)
+    if (length(errorIndexes) > 0)
+    {
+      i <- sample(1:l, 1)
+      iterCount <- iterCount + 1
+      xi <- xl[i, 1:n]
+      yi <- xl[i, n + 1]
+      wx <- crossprod(w, xi)
+      margin <- wx * yi
+      ex <- lossFunctionAdaline(margin)
+      w <- w - eta * (wx - yi) * xi
+      Qprev <- Q
+      Q <- (1 - lambda) * Q + lambda * ex
+    } else
+    {
+      break
+    }
+  }
+  return(w)
+}
+  ```
+  Пример работы
+  
+  
+  ![](https://github.com/uhsd22/ML_LABS/blob/master/ADALINE/data.png)
+  
+  
+  ## **<a name="hebb"></a>2. Правило Хэбба**
+  
+  
+   ## **<a name="SVM"></a>3. Метод опорных векторов**
    
    [тут ссылка на теорию](https://neerc.ifmo.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BE%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D1%85_%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2_(SVM))
    
