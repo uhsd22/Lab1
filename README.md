@@ -26,7 +26,7 @@
 	
 	
 3. <a href="#line">Линейные алгоритмы классификации</a><br>
-	3.1 <td><a href="#ad">ADALINE. Правило Хэбба</a></td>
+	3.1 <td><a href="#ad">ADALINE</a></td>
 	
 	3.2 <td><a href="#hebb">Правило Хэбба</a></td>
 	
